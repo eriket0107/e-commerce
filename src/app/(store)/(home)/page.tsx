@@ -1,13 +1,15 @@
 import { api } from '@/data/api'
-import { Product } from '@/data/types/product'
+import { ProductType } from '@/data/types/product'
 import { PriceCurrencyReal } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const getFeaturedProducts = async (): Promise<Product[]> => {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
-
-  const response = await api('/products/featured')
+const getFeaturedProducts = async (): Promise<ProductType[]> => {
+  const response = await api('/products/featured', {
+    next: {
+      revalidate: 60 * 60, // 1 hour
+    },
+  })
 
   const products = await response.json()
 
@@ -17,7 +19,6 @@ const getFeaturedProducts = async (): Promise<Product[]> => {
 const Home = async () => {
   const [highLigthedProduct, ...otherProducts] = await getFeaturedProducts()
 
-  console.log(highLigthedProduct)
   return (
     <div className="grid max-h-[860px] grid-cols-9 grid-rows-6 gap-6">
       <Link

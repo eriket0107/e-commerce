@@ -8,7 +8,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Dev Store',
+  title: {
+    template: '%s | devstore',
+    default: 'devstore',
+  },
 }
 
 export default function RootLayout({
@@ -19,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="pt" className={inter.variable}>
       <body>
-        <main className="bg-zinc-950 text-zinc-50 antialiased">{children}</main>
+        <main className="relative bg-zinc-950 text-zinc-50 antialiased">
+          {children}
+        </main>
       </body>
     </html>
   )
