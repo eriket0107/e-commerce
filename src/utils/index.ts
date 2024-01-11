@@ -1,1 +1,1 @@
-export { PriceCurrencyReal } from './currency'
+export { priceCurrencyReal } from './currency'

@@ -1,4 +1,4 @@
-export const PriceCurrencyReal = (price: number) => {
+export const priceCurrencyReal = (price: number) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL',
