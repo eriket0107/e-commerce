@@ -20,15 +20,15 @@ const Home = async () => {
   const [highLigthedProduct, ...otherProducts] = await getFeaturedProducts()
 
   return (
-    <div className="grid max-h-[860px] grid-cols-9 grid-rows-6 gap-6">
+    <div className="grid max-h-[800px] grid-cols-9 grid-rows-6 gap-6">
       <Link
         href={`/product/${highLigthedProduct.slug}`}
-        className="group relative col-span-6 row-span-6 flex items-start justify-center overflow-hidden rounded-lg bg-zinc-900"
+        className="group relative col-span-6 row-span-6 flex items-end justify-center overflow-hidden rounded-lg bg-zinc-900"
       >
         <Image
           src={highLigthedProduct.image}
-          width={920}
-          height={920}
+          width={780}
+          height={780}
           quality={100}
           alt=""
           className="transition-transform duration-500 group-hover:scale-105"
@@ -50,8 +50,8 @@ const Home = async () => {
         >
           <Image
             src={product.image}
-            width={920}
-            height={920}
+            width={496}
+            height={418}
             quality={100}
             alt=""
             className="transition-transform duration-500 group-hover:scale-105"
