@@ -1,4 +1,4 @@
-import { set, z } from 'zod'
+import { z } from 'zod'
 import data from '../data.json'
 import { NextRequest, NextResponse } from 'next/server'
 
