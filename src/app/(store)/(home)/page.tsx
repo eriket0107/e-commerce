@@ -1,6 +1,6 @@
 import { api } from '@/data/api'
 import { ProductType } from '@/data/types/product'
-import { PriceCurrencyReal } from '@/utils'
+import { priceCurrencyReal } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -37,7 +37,7 @@ const Home = async () => {
         <div className="absolute bottom-28 right-28 flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
           <span className="truncate">{highLigthedProduct.title}</span>
           <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">
-            {PriceCurrencyReal(highLigthedProduct.price)}
+            {priceCurrencyReal(highLigthedProduct.price)}
           </span>
         </div>
       </Link>
@@ -60,7 +60,7 @@ const Home = async () => {
           <div className="absolute bottom-10 right-28 flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
             <span className="truncate">{product.title}</span>
             <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">
-              {PriceCurrencyReal(product.price)}
+              {priceCurrencyReal(product.price)}
             </span>
           </div>
         </Link>

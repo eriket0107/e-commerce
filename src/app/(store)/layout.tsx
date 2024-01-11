@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
 import Header from '../components/header'
 import { Provider } from '@/contexts/providers'
-import { Cart } from '../components/cart-modal'
 
 const StoreLayout = ({ children }: { children: ReactNode }) => {
   return (

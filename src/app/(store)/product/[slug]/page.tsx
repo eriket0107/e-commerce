@@ -1,7 +1,7 @@
 import { api } from '@/data/api'
 import Image from 'next/image'
 import { ProductType } from '@/data/types/product'
-import { PriceCurrencyReal } from '@/utils'
+import { priceCurrencyReal } from '@/utils'
 import { Metadata } from 'next'
 import AddToCartButton from '@/app/components/add-to-cart-button'
 
@@ -59,10 +59,10 @@ const Product = async ({ params }: ProductProps) => {
         <p className="text-zinc-450 mt-2 leading-relaxed">DESCRIÇÃO</p>
         <div className="mt-8 flex items-center gap-3">
           <span className="inline-block rounded-full bg-violet-500 px-5 py-2.5 font-semibold">
-            {PriceCurrencyReal(product.price)}
+            {priceCurrencyReal(product.price)}
           </span>
           <span className="text-sm text-zinc-400">
-            Em 12x s/juros de {PriceCurrencyReal(product.price / 12)}
+            Em 12x s/juros de {priceCurrencyReal(product.price / 12)}
           </span>
         </div>
 
